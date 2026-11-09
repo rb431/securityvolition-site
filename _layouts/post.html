@@ -1,0 +1,32 @@
+---
+layout: default
+---
+<article class="post">
+  <header class="hero small">
+    <h1>{{ page.title | escape }}</h1>
+    <p class="meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+      {% assign kind = page.type | default: "post" %}
+      <span class="badge {% if kind == 'article' %}article{% else %}on{% endif %}">{{ kind | capitalize }}</span>
+      <span class="by">Richard Brackett</span>
+    </p>
+    {%- if page.tags and page.tags.size > 0 %}
+    <ul class="tags">
+      {%- for tag in page.tags %}
+      <li class="tag">{{ tag | escape }}</li>
+      {%- endfor %}
+    </ul>
+    {%- endif %}
+  </header>
+  <div class="post-body">
+    {{ content }}
+  </div>
+  <footer class="post-end">
+    {%- if page.linkedin_url %}
+    <p><a href="{{ page.linkedin_url | escape }}" rel="noopener noreferrer">Originally published on LinkedIn</a></p>
+    {%- endif %}
+    {%- if page.source %}
+    <p class="source">Source: <a href="{{ page.source | escape }}" rel="noopener noreferrer">{{ page.source | escape }}</a></p>
+    {%- endif %}
+  </footer>
+</article>
