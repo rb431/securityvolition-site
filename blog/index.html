@@ -1,0 +1,24 @@
+---
+layout: default
+title: Security Volition Blog
+permalink: /blog/
+---
+<section class="hero small">
+  <h1>{{ site.title | escape }}</h1>
+  <p class="lead">{{ site.description | escape }}</p>
+  <p class="byline">{{ site.author.name | escape }}</p>
+  <p class="feed-link"><a href="{{ '/blog/feed.xml' | relative_url }}">RSS feed</a></p>
+</section>
+<section class="post-list" aria-label="Posts">
+  {% for post in site.posts %}
+  <article class="post-card">
+    <h2><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
+    <p class="meta">
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
+      {% assign kind = post.type | default: "post" %}
+      <span class="badge {% if kind == 'article' %}article{% else %}on{% endif %}">{{ kind | capitalize }}</span>
+    </p>
+    <p class="excerpt">{{ post.excerpt | strip_html | normalize_whitespace | truncate: 320 | escape }}</p>
+  </article>
+  {% endfor %}
+</section>

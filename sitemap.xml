@@ -1,2 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://securityvolition.com/</loc></url></urlset>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://securityvolition.com/</loc></url>
+<url><loc>https://securityvolition.com/blog/</loc></url>
+<url><loc>https://securityvolition.com/blog/2026/11/09/know-what-you-run-patch-faster/</loc></url>
+<url><loc>https://securityvolition.com/blog/2026/11/07/low-severity-esxi-bug-high-severity-lesson/</loc></url>
+<url><loc>https://securityvolition.com/blog/2026/11/07/vpn-placement-for-smbs/</loc></url>
+<url><loc>https://securityvolition.com/blog/2026/11/06/llmjacking-bills-are-incident-signals/</loc></url>
+<url><loc>https://securityvolition.com/blog/2026/11/04/alpine-gitlab-ir-write-up/</loc></url>
+<url><loc>https://securityvolition.com/blog/2026/11/02/ivanti-patching-isnt-eviction/</loc></url>
+</urlset>

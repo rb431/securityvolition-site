@@ -1,0 +1,76 @@
+# Security Volition blog.
+# The root landing page, CNAME, 404, stylesheet, robots.txt, and sitemap
+# have no front matter, so Jekyll copies them unchanged.
+# Do not add a .nojekyll file; that disables this build on GitHub Pages.
+
+title: Security Volition Blog
+description: Practitioner notes on incident response, threat trends, and the defensive controls that actually reduce damage.
+url: https://securityvolition.com
+# Empty string, not "/". An empty baseurl keeps GitHub Pages from prefixing
+# the project-repo path onto a custom domain served at /.
+baseurl: ""
+lang: en
+timezone: America/New_York
+author:
+  name: Richard Brackett
+
+# GitHub Pages defaults to the Primer theme. null keeps that theme from
+# wrapping pages or adding styles to this site.
+theme: null
+
+permalink: /blog/:year/:month/:day/:title/
+
+# Publish the Markdown as written: no curly quotes, ellipses, or dash substitution.
+markdown: kramdown
+kramdown:
+  input: GFM
+  # Source posts use one sentence per line. Preserve those breaks (URL lists
+  # especially) instead of folding them into a single paragraph.
+  hard_wrap: true
+  auto_ids: true
+  syntax_highlighter: rouge
+  smart_quotes: apos,apos,quot,quot
+  entity_output: as_char
+  typographic_symbols:
+    hellip: "..."
+    mdash: "---"
+    ndash: "--"
+    laquo: "<<"
+    raquo: ">>"
+
+plugins:
+  - jekyll-feed
+
+feed:
+  path: blog/feed.xml
+  posts_limit: 50
+
+# Posts already set title in front matter. Leave that title alone.
+titles_from_headings:
+  enabled: false
+
+# Only files with front matter become pages. BLOG.md is also excluded below.
+optional_front_matter:
+  enabled: false
+
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - .bundle/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/
+  - BLOG.md
+  - README.md
+
+include:
+  - CNAME
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
